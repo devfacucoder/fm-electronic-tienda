@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+.bg_img {
+  background-image: url(/bg.img.png);
+  background-size: cover; /* 🔥 escala como object-cover */
+  background-position: center; /* centra la imagen */
+  background-repeat: no-repeat; /* evita que se repita */
+}
