@@ -1,11 +1,23 @@
-import Product from "../models/product.model.js"; 
+import Product from "../models/product.model.js";
+import userModel from "../models/user.model.js";
+import jwt from "jsonwebtoken";
+import dotenv from "dotenv";
+dotenv.config();
+
+export const getAllProducts = async () => {
+  try {
+    const productsDB = await Product.find();
+    return productsDB;
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 export const createProduct = async (req, res) => {
   try {
-    // Multer te da req.files con los datos de Cloudinary
     const images = req.files.map((file) => ({
-      url: file.path,        // URL pública en Cloudinary
-      idPublic: file.filename, // ID público para poder borrar
+      url: file.path,
+      idPublic: file.filename,
     }));
 
     const newProduct = new Product({
@@ -23,3 +35,5 @@ export const createProduct = async (req, res) => {
     res.status(500).json({ error: "Error al crear producto" });
   }
 };
+
+
