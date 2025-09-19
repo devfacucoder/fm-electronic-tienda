@@ -23,9 +23,12 @@ function MenuMobile({ onClose }) {
           <Link className="   " to={"/login"}>
             Ingresar
           </Link>
-          <button onClick={() => {
-          onClose(false);
-        }} className="text-[30px]">
+          <button
+            onClick={() => {
+              onClose(false);
+            }}
+            className="text-[30px]"
+          >
             X
           </button>
         </div>
