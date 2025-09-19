@@ -6,3 +6,9 @@
   background-position: center; /* centra la imagen */
   background-repeat: no-repeat; /* evita que se repita */
 }
+.bg_img2{
+  background-image: url("https://i.pinimg.com/originals/96/71/69/967169d99af012a2629acbe5e57f9329.png");
+  background-size: cover; /* 🔥 escala como object-cover */
+  background-position: center; /* centra la imagen */
+  background-repeat: no-repeat; /* evita que se repita */
+}
