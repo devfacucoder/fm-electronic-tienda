@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import { FaBars } from "react-icons/fa6";
 import MenuMobile from "./MenuMobile";
+import { useNavigate } from "react-router-dom";
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const navigate = useNavigate();
   return (
     <header className=" flex  justify-between   w-full h-[50px] bg-orange-400">
       {isMenuOpen && <MenuMobile onClose={setIsMenuOpen} />}
-      <div className="w-[30%] h-full  ">
+      <div className="w-[30%] h-full  " onClick={()=>{
+        navigate('/')
+      }} >
         <img
           className="w-full h-full object-scale-down"
           src="/fm-icon-trans.png"

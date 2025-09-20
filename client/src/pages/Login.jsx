@@ -15,7 +15,7 @@ function Login() {
     console.log("Datos enviados:", form);
     const response = await login(form);
     console.log("Respuesta del servidor:", response);
-
+    localStorage.setItem("token", response.token);
 
     // acá iría la lógica para autenticar con tu backend
   };
@@ -31,7 +31,7 @@ function Login() {
             <input
               type="email"
               name="email"
-              value={form.email}
+              value={form.email}  
               onChange={handleChange}
               className="w-full px-3 py-2 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="ejemplo@email.com"
